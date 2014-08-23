@@ -2,6 +2,7 @@ Initialize git repo
 
 ```
 git init
+touch README.md
 touch .gitignore
 echo "node_modules/" >> .gitignore
 git add .
