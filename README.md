@@ -1,5 +1,5 @@
 ## Grunt
---------------------------------
+================================
 JavaScript Task Runner
 
 Build Tool
@@ -112,4 +112,4 @@ Output
 Running "jshint:all" (jshint) task
 >> 2 files lint free.
 
-``` 
+```
