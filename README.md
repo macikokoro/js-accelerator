@@ -1,43 +1,115 @@
-## Serving a static HTML page with express
-------------------------------------------
+## Grunt
+--------------------------------
+JavaScript Task Runner
 
-Modify server.js
+Build Tool
+
+Automation tool
+
+### Typical Grunt Tasks
+- Concatenation
+- Minification
+- Pre-processing Sass and Coffeescript
+- Image Optimization
+- Running Tests
+- Seeding the database
+- Starting a development Server
+
+### It has two parts
+--------------------------
+
+#### Global
+- npm -g intall grunt-cli
+- npm install grunt --save-dev
+
+#### It requires a package.json
 
 ```
-var express = require('express');
-var http    = require('http');
-
-var app = express();
-
-app.use(express.static(__dirname + '/public'));
-
-var server = http.createServer(app);
-server.listen(3000, function() {
-  console.log('the server is listening on port 3000');
-});
+{
+  "name": "example-project",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.4"
+  }
+}
 ```
-The server now serves any files located in the public directory.
+#### It also requires Gruntfile.js
 
-mkdir public
+This is the outline of plugins and rules to execute on the code.
 
-touch public/index.html
+Plugins are the existing packages with all the details about a task.
 
 ```
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Hello World Express</title>
-    </head>
-    <body>
-      Hello World from an html document!
-    </body>
-</html>
+module.exports = function(grunt) {
+  grunt.initConfig({
+        //specify configuration for different tasks
+          //see documentation for expected values
+  });
+
+  //task plugins to be loaded
+  grunt.loadNpmTasks(‘package-name’);
+
+  //indicate lists of tasks that can be run from
+  //command line
+
+  grunt.registerTask(‘default’,'task-name');
+};
 ```
-Run the server with node server.js
 
-open localhost:3000
+```
+module.exports = function(grunt) {
+  grunt.initConfig({
+    simplemocha: {
+      options: { timeout: 3000 },
+      all: { src: ['test/**/*.js'] }
+    }
+  });
 
-the page reads Hello World from an html document!
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
-ctrl + c to stop server again
+  grunt.registerTask('default','simplemocha');
+};
+```
+
+#### JSHint
+
+- JavaScript Code Linter
+- Highlight potentially bad practices
+- Keeps code consistent style
+- Helps teams work together
+
+#### To use JSHint with grunt
+
+npm install grunt-contrib-jshint --save-dev
+
+#### JSHint Gruntfile.js
+
+```
+module.exports = function(grunt) {
+
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
+  grunt.initConfig({
+    jshint: {
+      all: ['Gruntfile.js', 'server.js']
+    }
+
+  });
+
+  grunt.registerTask('default','jshint');
+};
+```
+#### Install simple mocha
+
+npm install grunt-simple-mocha
+
+mkdir test
+
+start linting with *grunt*
+
+Output
+```
+Running "jshint:all" (jshint) task
+>> 2 files lint free.
+
+``` 
