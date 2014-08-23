@@ -7,7 +7,7 @@ echo "node_modules/" >> .gitignore
 git add .
 git commit -m "add package.json and .gitignore"
 ```
-npm init// package.json
+npm init// creates package.json
 
 for express add dependencies to package.json
 
@@ -41,3 +41,11 @@ server.listen(3000, function(){
   console.log('the server is running on port 3000');
 });
 ```
+
+run with node server.js
+
+open browser to http://localhost:3000
+
+server says hello world!
+
+ctrl + c to stop the server
