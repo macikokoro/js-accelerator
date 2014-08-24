@@ -1,29 +1,17 @@
 {
-  "name": "backbone-view-event-01",
-  "version": "0.0.2",
-  "description": "backbone app with view events",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/macikokoro/backbone-view-event-01.git"
-  },
+  "name": "generator-jq",
+  "version": "0.1.0",
+  "description": "",
   "keywords": [
-    "backbone",
-    "view",
-    "events",
-    "node",
-    "module"
+    "yeoman-generator"
   ],
-  "author": "JQ",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/macikokoro/backbone-view-event-01/issues"
-  },
-  "homepage": "https://github.com/macikokoro/backbone-view-event-01",
   "dependencies": {
-    "express": "^4.7.4"
+    "yeoman-generator": "^0.16.0"
+  },
+  "files": [
+    "section"
+  ],
+  "devDependencies": {
+    "grunt-serve": "^0.1.3"
   }
 }

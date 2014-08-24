@@ -1,3 +1,7 @@
+# generator-jq
+
+## Getting Started
+
 ## Yeoman Generators
 -----------------------------------
 mkdir generator-nameofgenerator
@@ -24,8 +28,6 @@ npm init //to create package.json
 - keyword property must cotain yeoman-generator to be indexed by the community generator page.
 
 npm install --save yeoman-generator
-
-npm install yo
 
 #### Create Folder structure
 ------------------------------
@@ -111,9 +113,9 @@ Create the css files
 
 mkdir css
 
-touch templates/_main.css
+touch css/_main.css
 
-touch templates/section.css
+touch css/_section.css
 
 Create _gruntfile.js and _package.json
 
@@ -121,18 +123,23 @@ touch templates/_gruntfile.js
 
 touch templates/_package.json
 
-#### Runing your shiny brand new generator
+##### Original tutorial:
+
+http://code.tutsplus.com/tutorials/build-your-own-yeoman-generator--cms-20040
+
+
+
+```bash
+npm install -g yo
+```
+To install generator-jq from npm, run:
 
 ```bash
 npm install -g generator-jq
 ```
 
-Initiate the generator from a new folder within root folder:
+Initiate the generator:
 
 ```bash
 yo jq
 ```
-
-##### Original tutorial:
-
-http://code.tutsplus.com/tutorials/build-your-own-yeoman-generator--cms-20040
